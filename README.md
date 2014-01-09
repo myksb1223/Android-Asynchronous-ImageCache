@@ -1,4 +1,4 @@
-ImageChache
+ImageCache
 ===========
 
 Android_Asynchronous_ImageCache can download web images using cache and thread.
