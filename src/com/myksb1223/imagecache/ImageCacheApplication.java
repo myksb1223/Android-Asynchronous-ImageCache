@@ -20,6 +20,8 @@ public class ImageCacheApplication extends Application {
 	protected LinkedList<String> urls;	
 	protected LinkedHashMap<String, BitmapDownloaderTask> taskCache;
 	protected LinkedHashMap<ImageView, ImageAsyncTask> imageTaskCache;
+		
+	// This class is to use singleton pattern.
 	
 	public static ImageCacheApplication getInstance() {
     return singleton;
@@ -48,6 +50,10 @@ public class ImageCacheApplication extends Application {
     	file.mkdir();
     }          		
 	}
+	
+	// This method replaces url to filename.
+	// Url has special characters, so We have to change these characters
+	// to save bitmap file into device cache directory. 
 	
 	public String keyToFilename(String key) {
 		String filename = key.replace(":", "_");

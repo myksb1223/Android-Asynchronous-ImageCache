@@ -59,7 +59,7 @@ public class ImageCustomAdapter extends BaseAdapter {
 		else {
 			holder = (ViewHolder)convertView.getTag();
 		}
-
+		
 		downloader.download(holder.imageView, position);
 		
 		return convertView;

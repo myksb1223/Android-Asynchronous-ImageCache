@@ -18,6 +18,8 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ImageView;
 
+// This class actually downloads bitmaps.
+
 public class ImageAsyncTask {
 	private static final String TAG = "ImageAsyncTask";
 	private ImageCacheApplication singleton;
@@ -29,6 +31,11 @@ public class ImageAsyncTask {
 	}
 	
 	public void download(ImageView imageView, int position) {
+		
+		// taskCache saves task related url.
+		// If task is not null, remove the task and create new task. 
+		// After then start downloading bitmap image.
+		
 		url = singleton.urls.get(position);
 		task = singleton.taskCache.get(url);
 		fileName = singleton.keyToFilename(url);
@@ -67,15 +74,11 @@ public class ImageAsyncTask {
     @Override
     protected Bitmap doInBackground(String... params) {
         url = params[0];
-                
-/*        ImageView imageView = imageViewReference.get();
-        BitmapDrawable drawable = (BitmapDrawable)imageView.getDrawable();
-        if(drawable != null) {
-        	Bitmap bitmap = drawable.getBitmap();
-        	if(bitmap != null) {
-        		bitmap.recycle();
-        	}
-        }*/
+                        
+        // Before downloading a bitmap, find a bitmap using url in the memory Cache.
+        // If you can't find int the memory Cache, find it in the disk Cache.
+        // If you can't find in the disk Cache, then you really download.
+        
       	if(CacheContainer.getMemory(url) != null) {
       		return (Bitmap)CacheContainer.getMemory(url);        
       	}
@@ -96,6 +99,8 @@ public class ImageAsyncTask {
 			if(bitmap != null) {
 				ImageView imageView = imageViewReference.get();
 				imageView.setImageBitmap(bitmap);						
+				
+				// Save the bitmap into memory and disk cache.
 				
 				synchronized (CacheContainer.getMemoryCache()) {
 			     if (CacheContainer.getMemory(url) == null) {
