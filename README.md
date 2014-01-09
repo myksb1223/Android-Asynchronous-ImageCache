@@ -22,7 +22,6 @@ Usage
 Acknowledgments
 ===============
 I refer to <a href="http://developer.android.com/training/displaying-bitmaps/cache-bitmap.html">andorid develop site</a> and <a href="http://javacan.tistory.com/237">JAVA CAN DO IT(Korean) Blog</a>.
-
 I refer to <a href="https://gist.github.com/codebutler/2339666">codebutler</a> to parse JSON.
 
 Thanks.
