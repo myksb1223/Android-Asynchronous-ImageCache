@@ -11,6 +11,13 @@ public class ImageDownloader {
 	
 	public void download(ImageView imageView, int position) {
 		
+		//
+		// If task already exists, remove the task in the imageTaskCache.
+		// After removing, create imageAsyncTask object and add the imageTaskCache.
+		// GridView reuses it's rows. So we asynchronously use each row.
+		// This is why the imageView is key and the task is value.
+		//
+		
 		ImageAsyncTask task = singleton.imageTaskCache.get(imageView);
 		if(task != null) {			
 				task.cancel(true);

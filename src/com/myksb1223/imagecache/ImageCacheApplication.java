@@ -21,7 +21,9 @@ public class ImageCacheApplication extends Application {
 	protected LinkedHashMap<String, BitmapDownloaderTask> taskCache;
 	protected LinkedHashMap<ImageView, ImageAsyncTask> imageTaskCache;
 		
+	//
 	// This class is to use singleton pattern.
+	//
 	
 	public static ImageCacheApplication getInstance() {
     return singleton;

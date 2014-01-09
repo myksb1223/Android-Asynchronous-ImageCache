@@ -42,6 +42,11 @@ public class MainActivity extends Activity {
 		gridView = (GridView)findViewById(R.id.gridView);
 		gridView.setAdapter(mAdapter);
 		
+		//
+		// This is get the url sources.
+		// This will get my webpage's urls.
+		//
+		
 		loadingThread mThread = new loadingThread("http://koding.classup.co/sessions/make_url");
 		mThread.start();
 	}
@@ -149,7 +154,7 @@ public class MainActivity extends Activity {
   		
   		try {
 				JSONObject values = new JSONObject(receiveString);
-				HashMap<String, Object> data = (HashMap<String, Object>)JSONHelper.toMap(values);
+				HashMap<String, Object> data = (HashMap<String, Object>)JSONHelper.toMap(values);			
 				
 				for(int i=0; i<data.size(); i++) {
 					activity.singleton.urls.add((String)data.get(Integer.toString(i)));

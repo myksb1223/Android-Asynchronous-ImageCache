@@ -19,6 +19,11 @@ import android.os.Build;
 import android.os.Environment;
 import android.util.Log;
 
+// Basic concept.
+// Write, delete and get are default functions in Cache.  
+// And we have to check the size because Cache has limited size.
+// Lock is very important.
+
 public class FileCache {
 	private static String TAG = "FileCache";
 	private int DEFAULT_CACHE_SIZE = 10 * 1024 * 1024;

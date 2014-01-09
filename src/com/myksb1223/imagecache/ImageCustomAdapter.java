@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class ImageCustomAdapter extends BaseAdapter {
-//	private Context mCfx;
 	private LayoutInflater mInflater;
 	private ImageCacheApplication singleton;
 	private ImageDownloader downloader;

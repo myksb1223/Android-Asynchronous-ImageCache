@@ -6,6 +6,11 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
 
+//
+// This class is container to access memory and disk cache.
+// To access cache, you have to use this container.
+//
+
 public class CacheContainer {
 	private static String TAG = "CacheContainer";
 	private static LruCache<String, Bitmap> mMemoryCache;
