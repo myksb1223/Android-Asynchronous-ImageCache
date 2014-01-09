@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ImageCache</string>
+    <string name="clear_memCache">Clear Memory</string>
+    <string name="clear_diskCache">Clear Disk</string>
+    <string name="clear_all">Clear All</string>
+
+</resources>
