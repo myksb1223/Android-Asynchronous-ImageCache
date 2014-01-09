@@ -16,7 +16,7 @@ Usage
 =========
 * First, Unzip the file.
 * Seond, Open the eclipse.
-* Third, ```File -> import -> Android -> Existing Android Code into Workspace```. Add the project into your workspace
+* Third, ```File -> import -> Android -> Existing Android Code into Workspace```. Add the project into your workspace.
 * Last, Build! 
 
 Acknowledgments
